@@ -1,0 +1,28 @@
+<div>
+    <app-shoppingcartproduct></app-shoppingcartproduct>
+    
+    <div *ngIf="shoppingcart.length <= 0" class="cart-item">
+        <div class="p-2 d-flex justify-content-center align-items-center">
+            <div class="d-flex align-items-center">
+                Din kundvagn är tom. 
+            </div>
+        </div>
+        <div class="dropdown-divider"></div>
+    </div>
+
+
+    <div class="p-2 d-flex justify-content-between align-items-center">
+        <div  class="ml-2">
+            <div class="total-price">
+                {{shoppingcartTotal}}<span class="ml-1">Sek</span>
+            </div>
+            <small class="text-muted">inkl. moms</small>
+        </div>
+        
+            <button class="btn purple-gradient btn-md ml-4">Till kassan</button>
+            <button class="btn btn-danger" (click)="clearCart();$event.stopPropagation()"><i class="fas fa-trash"></i></button>
+        
+        
+    </div>
+
+</div>

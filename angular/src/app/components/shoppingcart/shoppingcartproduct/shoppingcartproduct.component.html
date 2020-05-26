@@ -1,0 +1,21 @@
+<div *ngFor="let item of shoppingcart">
+    <div class="cart-item">
+        <div class="p-2 d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <img src="{{item.product.image}}" alt="" class="img-fluid image-width">
+                <div>
+                    <div><strong></strong>{{item.product.name}}</div>
+                    <div><small>{{item.quantity}} x {{item.product.price}} SEK</small></div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="btn-group btn-group-sm" role="group" aria-label="quantity">
+                    <button type="button" class="btn btn-grey px-3"(click)="decrement(item);$event.stopPropagation()" >-</button>
+                    <button type="button" class="btn btn-grey px-3"(click)="increment(item);$event.stopPropagation()" >+</button>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown-divider"></div>
+    </div>
+</div>
